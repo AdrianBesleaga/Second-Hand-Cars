@@ -44,7 +44,7 @@ function error(x,id){
 }
 
 
-// valide inputs alphanumeric or number
+// validate inputs alphanumeric or number
 function validate(value,type,id) {
 
 // validate alphanumeric and . , characters
