@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Second-Hand Cars">
+  <meta name="keywords" content="sell cars, used cars, second-hand cars">
+  <meta name="author" content="Besleaga Adrian">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Second-Hand Cars</title>
+  
+  <link rel="stylesheet" href="css/styles.css">
+  
+</head>
+
+<body>
+
+<div class="responsive">
+
+<h1>Second-Hand Cars</h1>
+
+<noscript>Sorry, your browser does not support JavaScript!</noscript>
+
+<!-- Open The Modal -->
+<button id="myBtn" class="myBtn">Open Modal</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+	 <!-- &times; is a better x -->
+      <span class="close">&times;</span>
+      <h2 style="line-height: 10px;">Add Product</h2>
+	  <p style="float:left;">Second-hand car</p>
+	  <p style="float:right;">Category : Automobiles</p>
+    </div>
+    <div class="modal-body">
+
+	<form class="FormSection" method="post" id="form" action="">
+	<p id="error" class="error"> </p>
+      <p>Title : </p>
+	  <input type="text" name="title" id="title" value="" onchange="validate(this.value,this.type,this.id)" required>
+      <p>Brand : </p>
+		<select id="carLogo" onchange="validate(this.value,this.type,this.id);">
+	  <option value="bmw">Bmw</option>
+	  <option value="mercedes">Mercedes</option>
+	  <option value="lamborghini">Lamborghini</option>
+	  <option value="nissan">Nissan</option>	 
+	  <option value="volkswagen">Volkswagen</option>
+	  
+		</select>
+		
+		<p>Year : </p>
+		<input type="number" id="year" name="year" value="2012" min="1900" max="2017" onchange="validate(this.value,this.type,this.id)" required>
+		
+		<p>Mileage in KM: </p>
+		<input type="number" id="mileage" name="mileage" value="80000" min="0" max="1000000" onchange="validate(this.value,this.type,this.id)" required>
+		
+		<p>Fuel Type:</p>
+		<select id="carFuel" onchange="validate(this.value,this.type,this.id)">
+		<option value="gasoline">Gasoline</option>
+		<option value="diesel">Diesel</option>
+		<option value="electric">Electric</option>	  
+		</select>
+		
+		<p>Color : </p>
+		<select id="carColor" onchange="validate(this.value,this.type,this.id)">
+		<option value="white">White</option>
+		<option value="black">Black</option>
+		<option value="red">Red</option>	
+		<option value="blue">Blue</option>		
+		</select>
+		
+		<div id="color" class="carColor"></div>
+		<img src="img/logos/bmw.png" id="cLogo" class="cLogo"></img>
+		
+		<p>Vehicle Damaged ?</p>
+			<input type="radio" id="Ndamaged" name="damaged" value="no" onchange="carDamaged()" checked > No
+			<input type="radio" id="Ydamaged" name="damaged" value="yes" onchange="carDamaged()"> Yes
+		
+		<textarea value="" name="DamagedInfo" id="DamagedInfo" placeholder="More details..." class="DamagedInfo" cols="10" rows="5" onchange="validate(this.value,'text',this.id)"></textarea>
+		
+		<p>Price :</p>
+		 <input type="number" placeholder="2500" id="price" name="price" min="0" value="2500" step="100" onchange="validate(this.value,this.type,this.id)" required>
+		
+		<p>Currency :</p>
+		<select id="Currency" onchange="validate(this.value,this.type,this.id)">
+		<option value="eur">Euro</option>
+		<option value="usd">Dollar</option>
+		<option value="ron">Ron</option>		
+		</select>	
+		
+		<p>Description :</p>
+		<textarea value="" name="Description" id="Description" placeholder="More details..." class="Description" cols="10" rows="5" onchange="validate(this.value,'text',this.id)"></textarea>
+		
+		<br><br>
+		<button type="button" id="saveCar" class="save" onclick="save()">Save</button>
+		<button type="button" class="cancel" onclick="cancel()">Cancel</button>
+		</form>
+    </div>
+    <div class="modal-footer">
+      <h3>Buy and sell cars</h3>
+    </div>
+  </div>
+
+</div>
+
+</div>
+
+  <script type="text/javascript" src="js/javascript.js"></script>
+  
+</body>
+</html>
